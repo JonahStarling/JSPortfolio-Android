@@ -1,6 +1,10 @@
 apply plugin: 'com.android.instantapp'
 
 dependencies {
-    implementation project(':timeline')
     implementation project(':base')
+    implementation project(':timeline')
+}
+
+repositories {
+    mavenCentral()
 }

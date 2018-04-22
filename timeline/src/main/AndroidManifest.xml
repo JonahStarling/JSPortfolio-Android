@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.jonahstarling.jsportfolio.timeline" >
+    package="com.jonahstarling.jsportfolio.timeline">
 
     <application>
-        <activity android:name=".TimelineActivity" >
-            <intent-filter android:order="1" >
+        <activity android:name=".TimelineActivity">
+            <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.BROWSABLE" />
@@ -12,13 +12,19 @@
 
                 <data
                     android:host="jonahstarling.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
+                    android:scheme="https"
+                    android:pathPattern="/timeline" />
             </intent-filter>
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:scheme="http"
+                    android:host="jonahstarling.com"
+                    android:pathPattern="/timeline" />
             </intent-filter>
         </activity>
     </application>
