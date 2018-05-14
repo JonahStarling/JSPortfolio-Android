@@ -9,6 +9,10 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+        if (savedInstanceState == null) {
+            val fragment = HomeFragment()
+            supportFragmentManager.beginTransaction().add(R.id.activity_home_container, fragment).commit()
+        }
     }
 
 }
