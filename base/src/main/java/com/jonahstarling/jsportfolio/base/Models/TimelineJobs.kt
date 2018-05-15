@@ -13,15 +13,33 @@ object TimelineJobs {
     val TIMELINE_JOBS: MutableList<TimelineJob> = ArrayList()
     val TIMELINE_JOBS_MAP: MutableMap<String, TimelineJob> = HashMap()
 
+    fun addTimelineJob(timelineJob: TimelineJob) {
+        TIMELINE_JOBS.add(timelineJob)
+        TIMELINE_JOBS_MAP[timelineJob.id] = timelineJob
+    }
+
     data class TimelineJob(val companyTitle: String, val startDate: Date) {
         val id: String = "$companyTitle-$startDate"
-        val positionTitle: String? = null
-        val positionStatus: PositionStatus? = null
-        val endDate: Date? = null
-        val jobDescription: String? = null
-        val companyDescription: String? = null
-        val platforms: ArrayList<TechnologyPlatform> = ArrayList()
-        val technologyStack: ArrayList<TechnologyStackItem> = ArrayList()
-        val languageStack: ArrayList<LanguageStackItem> = ArrayList()
+        var positionTitle: String? = null
+        var positionStatus: PositionStatus? = null
+        var endDate: Date? = null
+        var jobDescription: String? = null
+        var companyDescription: String? = null
+        var platforms: ArrayList<TechnologyPlatform> = ArrayList()
+        var technologyStack: ArrayList<TechnologyStackItem> = ArrayList()
+        var languageStack: ArrayList<LanguageStackItem> = ArrayList()
+
+        override fun toString(): String {
+            return companyTitle + "\n" +
+                    startDate + "\n" +
+                    endDate + "\n" +
+                    positionTitle + "\n" +
+                    positionStatus?.text + "\n" +
+                    jobDescription + "\n" +
+                    companyDescription + "\n" +
+                    platforms.toString() + "\n" +
+                    technologyStack.toString() + "\n" +
+                    languageStack.toString()
+        }
     }
 }

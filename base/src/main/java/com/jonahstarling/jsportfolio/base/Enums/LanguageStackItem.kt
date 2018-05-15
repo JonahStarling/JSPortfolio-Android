@@ -11,5 +11,6 @@ enum class LanguageStackItem(val text: String) {
     KOTLIN("Kotlin"),
     OBJC("Objective-C"),
     PYTHON("Python"),
+    SWIFT("Swift"),
     XML("XML")
 }
